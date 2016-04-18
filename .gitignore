@@ -1,1 +1,8 @@
 /target/
+.settings/
+.idea/
+.tf/
+.tfignore
+*.project
+*.classpath
+*.iml
