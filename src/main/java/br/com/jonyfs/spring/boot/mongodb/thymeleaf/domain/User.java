@@ -31,7 +31,7 @@ public class User extends ResourceSupport {
 		this.name = name;
 		this.email = email;
 	}
-	
+
 	@JsonGetter("id")
 	public String getUserId() {
 		return this.id;

@@ -17,7 +17,7 @@ public class LoadDataConfig {
 
 	@PostConstruct
 	public void init() {
-		String[] firstNames = { "John", "Mary", "Joseph", "Paul", "Tim", "Steve", "Marcy","Lucy" };
+		String[] firstNames = { "John", "Mary", "Joseph", "Paul", "Tim", "Steve", "Marcy", "Lucy" };
 		String[] lastNames = { "Jobs", "Santos", "Almeida", "Chung", "Cook", "Anderson", "Perez" };
 
 		int i = 0;

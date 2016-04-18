@@ -4,10 +4,11 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 import javax.annotation.Resource;
-import javax.websocket.server.PathParam;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PagedResourcesAssembler;
+import org.springframework.hateoas.PagedResources;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.jonyfs.spring.boot.mongodb.thymeleaf.domain.User;
+import br.com.jonyfs.spring.boot.mongodb.thymeleaf.resource.UserResourceAssembler;
 import br.com.jonyfs.spring.boot.mongodb.thymeleaf.service.UserService;
 
 @RestController
@@ -26,6 +28,9 @@ public class UserController {
 
 	@Resource
 	UserService userService;
+
+	@Resource
+	UserResourceAssembler userResourceAssembler;
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
@@ -37,8 +42,8 @@ public class UserController {
 
 	@RequestMapping(method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
-	public HttpEntity<Page<User>> findAll(Pageable pageable) {
+	public PagedResources findAll(Pageable pageable, PagedResourcesAssembler assembler) {
 		Page<User> page = userService.findAll(pageable);
-		return new ResponseEntity<Page<User>>(page, HttpStatus.OK);
+		return assembler.toResource(page, userResourceAssembler);
 	}
 }
