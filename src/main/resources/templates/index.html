@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
-
-<title>Spring Framework Test</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-<link
-	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-	th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-	rel="stylesheet" media="screen" />
-
-<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
-
-<!-- <link href="../static/css/guru.css" th:href="@{css/guru.css}" -->
-<!-- 	rel="stylesheet" media="screen" /> -->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	layout:decorator="templates/default">
+<head>
+<title>Spring Boot and Thymeleaf - Greeting with Thymeleaf
+	Layout Dialect!</title>
 </head>
 <body>
-	<div class="container">
-		<h1>Hello</h1>
-	</div>
+	<section layout:fragment="content">
+		<p
+			th:text="${'Hello ' + name + '! Greeting from Thymeleaf Layout Dialect!'}"></p>
+		<p>This contents from greeting content!</p>
+	</section>
 </body>
 </html>
