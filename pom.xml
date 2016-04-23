@@ -39,7 +39,7 @@
 				<env>prod</env>
 			</properties>
 		</profile>
-	</profiles>
+	</profiles> 
 
 	<dependencies>
 		<dependency>
