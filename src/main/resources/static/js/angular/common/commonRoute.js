@@ -11,7 +11,7 @@ angular.module('Commom.Route', [
 				controller : 'HomeController'
 			});
 		$routeProvider
-		.when('/#/users', {
+		.when('/users', {
 			templateUrl : 'templates/users.html', 
 			controller : 'UserController'
 		});
