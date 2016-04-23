@@ -39,7 +39,7 @@
 				<env>prod</env>
 			</properties>
 		</profile>
-	</profiles> 
+	</profiles>
 
 	<dependencies>
 		<dependency>
@@ -148,6 +148,16 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<debug>true</debug>
+					<debuglevel>lines,vars,source</debuglevel>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
