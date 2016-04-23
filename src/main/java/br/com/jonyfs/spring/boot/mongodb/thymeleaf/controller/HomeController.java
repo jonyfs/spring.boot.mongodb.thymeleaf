@@ -6,10 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class UserController {
+public class HomeController {
 
-	@RequestMapping("/users")
+	@RequestMapping("/")
 	public String index() {
-		return "users";
-	}	
+		return "index";
+	}
+
+	@RequestMapping(value = "templates/{page}", method = RequestMethod.GET)
+	public String getLayout(@PathVariable("page") String page) {
+		return page;
+	}
 }

@@ -1,15 +1,88 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org"
-	layout:decorator="templates/default">
-<head>
-<title>Spring Boot and Thymeleaf - Greeting with Thymeleaf
-	Layout Dialect!</title>
-</head>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="app" class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<div th:replace="includes/header :: body"></div>
 <body>
-	<section layout:fragment="content">
-		<p
-			th:text="${'Hello ' + name + '! Greeting from Thymeleaf Layout Dialect!'}"></p>
-		<p>This contents from greeting content!</p>
-	</section>
+	<!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top" >
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-inverse-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="javascript:void(0)">Brand</a>
+			</div>
+			<div class="navbar-collapse collapse navbar-inverse-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="/users">Users</a></li>
+					<li><a href="javascript:void(0)">Link</a></li>
+					<li class="dropdown"><a href="bootstrap-elements.html"
+						data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+							<b class="caret"></b>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0)">Action</a></li>
+							<li><a href="javascript:void(0)">Another action</a></li>
+							<li><a href="javascript:void(0)">Something else here</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header">Dropdown header</li>
+							<li><a href="javascript:void(0)">Separated link</a></li>
+							<li><a href="javascript:void(0)">One more separated link</a></li>
+						</ul></li>
+				</ul>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control col-md-8"
+							placeholder="Search"/>
+					</div>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="javascript:void(0)">Link</a></li>
+					<li class="dropdown"><a href="bootstrap-elements.html"
+						data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+							<b class="caret"></b>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0)">Action</a></li>
+							<li><a href="javascript:void(0)">Another action</a></li>
+							<li><a href="javascript:void(0)">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:void(0)">Separated link</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div ng-view="true" class="container" style="padding-top: 70px;">
+	</div>
+
+	<div th:replace="includes/footer :: body"></div>
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] = function() {
+				(b[l].q = b[l].q || []).push(arguments)
+			});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>
