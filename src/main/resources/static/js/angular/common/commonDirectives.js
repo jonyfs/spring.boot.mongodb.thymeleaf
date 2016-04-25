@@ -24,5 +24,5 @@ return {
 
         scope.$on('$locationChangeSuccess', setActive);
     }
-}
+};
 }]);
