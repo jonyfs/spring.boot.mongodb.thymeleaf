@@ -23,4 +23,19 @@ angular.module('Commom.Factory', [])
 				return $q.reject(rejection);
 			}
 		};
-	}]);
+	}])
+	
+	.factory('CustomResource', function($resource){
+	  return function (url, params, resourceType){
+		    return $resource(
+		      url, 
+		      params,
+		      {'get':    {method:'GET'},
+		       'query':  {method:'GET', isArray:false},
+		       'update':   {method:'PUT'},
+		       'delete':   {method:'DELETE'},
+		       'validate':   {method:'POST'},
+		      }
+		    );
+		  };
+		});
