@@ -5,7 +5,8 @@ angular.module('app', [
 	'ngRoute',
 	'Commom.Route',
 	'Commom.Directives',
-	'Commom.Factory'])
+	'Commom.Factory',
+	'autoActive'])
 
 	.config(['$httpProvider', function($httpProvider) {
 
