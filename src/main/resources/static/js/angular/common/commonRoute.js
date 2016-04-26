@@ -1,6 +1,7 @@
 angular.module('Commom.Route', [
 	'ngResource',
 	'ngRoute',
+	'ui.router',
 	'commomController'])
                                
 	.config(['$routeProvider', function($routeProvider) {
@@ -12,7 +13,7 @@ angular.module('Commom.Route', [
 			});
 		$routeProvider
 		.when('/users', {
-			templateUrl : 'templates/users.html', 
+			templateUrl : 'templates/list.html', 
 			controller : 'UserController'
 		});
 	}]);

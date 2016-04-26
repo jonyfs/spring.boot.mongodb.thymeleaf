@@ -6,9 +6,27 @@ angular.module('commomController', [])
 
 } ])
 
-.controller('UserController', [ '$scope', '$http', function($scope, $http) {
+.controller('UserController', [ '$scope', '$http','$stateParams','$controller','CustomResource', function($scope, $http,$stateParams, $controller, CustomResource) {
 
-	$scope.welcomeMsg = "Welcome 2!";
+	var resource = CustomResource('/api/' + 'users/:id',   {id:'@id',page:'@page',size:'@size',sort:'@sort'}, 'users');
+
+	$scope.headers = ['#','Name','Email'];
+
+	$scope.fields = ['id','name','email'];
+
+	$scope.sortableFields = ['false','true','true']; 
+
+	$scope.pageTitle = 'Client';
+
+	$scope.pageSubTitle = 'List';
+
+	$scope.newUrl = '/users/new'; 
+
+	$scope.baseUrl = '/users';
+
+	$scope.maxPages = 5;
+
+	$controller('CrudCtrl', { $scope: $scope,$stateParams: $stateParams, CustomizedResource: resource });
 
 } ])
 
