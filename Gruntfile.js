@@ -50,10 +50,12 @@ module.exports = function(grunt) {
                 //Shared Options Hash
             },
             dev: {
-                NODE_ENV: 'dev'
+                NODE_ENV: 'dev',
+                apiEndpoint: 'http://localhost:8080/api'
             },
             prod: {
-                NODE_ENV: 'prod'
+                NODE_ENV: 'prod',
+                apiEndpoint: 'http://springthymeleafmaterialdesign.herokuapp.com/api'
             }
         },
         includeSource: {
