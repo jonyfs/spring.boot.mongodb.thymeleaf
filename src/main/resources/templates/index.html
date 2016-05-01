@@ -3,7 +3,8 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html ng-app="app" class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<html ng-app="app" class="no-js" lang="en"
+	xmlns:th="http://www.thymeleaf.org">
 <!--<![endif]-->
 <div th:replace="includes/header :: body"></div>
 <body>
@@ -11,7 +12,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse navbar-fixed-top" >
+	<div class="navbar navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -19,16 +20,16 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#/">Brand</a>
+				<a class="navbar-brand" href="#/todo">Brand</a>
 			</div>
 			<div class="navbar-collapse collapse navbar-inverse-collapse">
-				<ul class="nav navbar-nav" auto-active="auto-active">
-					<li><a href="#/">Home</a></li>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#/">Home</a></li>
 					<li><a href="#/users">Users</a></li>
 					<li><a href="#/todo">Link</a></li>
-					<li class="dropdown"><a href="bootstrap-elements.html"
-						data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-							<b class="caret"></b>
+					<li class="dropdown"><a href="#/todo" data-target="#"
+						class="dropdown-toggle" data-toggle="dropdown">Dropdown <b
+							class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="#/todo">Action</a></li>
@@ -43,14 +44,14 @@
 				<form class="navbar-form navbar-left">
 					<div class="form-group">
 						<input type="text" class="form-control col-md-8"
-							placeholder="Search"/>
+							placeholder="Search" />
 					</div>
 				</form>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#/todo">Link</a></li>
-					<li class="dropdown"><a href="bootstrap-elements.html"
-						data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-							<b class="caret"></b>
+					<li class="dropdown"><a href="#/todo" data-target="#"
+						class="dropdown-toggle" data-toggle="dropdown">Dropdown <b
+							class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="#/todo">Action</a></li>
@@ -60,10 +61,16 @@
 							<li><a href="#/todo">Separated link</a></li>
 						</ul></li>
 				</ul>
+				<form class="navbar-form navbar-right">
+					<div class="togglebutton">
+						<label> <input type="checkbox" /><span class="toggle"></span>
+						</label>
+					</div>
+				</form>
 			</div>
+
 		</div>
 	</div>
-
 	<div ng-view="true" class="container" style="padding-top: 70px;">
 	</div>
 
